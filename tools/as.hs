@@ -52,7 +52,7 @@ pIdent = char '.' >> (:) <$> lowerChar <*> many alphaNumChar
 
 pAddr :: Parser Addr
 pAddr = symbol $ choice [ AVal . read <$> some digitChar
-                        , ALabel <$> pIdent 
+                        , ALabel <$> pIdent
                         ]
 
 data Inst = INop
